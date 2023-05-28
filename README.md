@@ -1,1 +1,1 @@
-# Django_introduction_with_Docker
+# Docker_for_Django_introduction

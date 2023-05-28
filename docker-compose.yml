@@ -1,16 +1,17 @@
 version: '3'
 
 services:
-  python3:
-    restart: always
-    build: 
-      context: .
-      dockerfile: Python
-    command: python DockerProject/manage.py runserver 0.0.0.0:8000
-    container_name: 'Django'
-    working_dir: '/root/src'
-    tty: true
+  django:
+    build:
+      context: ./containers
+      dockerfile: Dockerfile
+    
+    container_name: django
+    
     ports:
       - "8000:8000"
+    
+    tty: true
+
     volumes:
-      - ${SRC_PATH}:/root/src
+      - ${SRC_PATH}:/root/workspace
